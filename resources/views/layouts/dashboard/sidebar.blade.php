@@ -25,15 +25,21 @@
           </a>
         </li>
         <li>
-          <a href="{{url('apl01')}}">
+          <a href="{{url('apl02')}}">
             <i class="fa fa-bar-chart"></i>
             <span>APL-02</span>
           </a>
         </li>
         <li>
-          <a href="{{url('apl01')}}">
+          <a href="a">
             <i class="fa fa-bar-chart"></i>
             <span>Pengecekan</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{url('unit')}}">
+            <i class="fa fa-bar-chart"></i>
+            <span>Unit</span>
           </a>
         </li>
 
