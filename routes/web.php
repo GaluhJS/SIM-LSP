@@ -18,8 +18,13 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('apl01', 'apl01Controller@index');
+Route::post('apl01', 'apl01Controller@store');
 Route::get('apl02', 'apl02Controller@index');
 Route::get('unit', 'unitController@index');
+Route::post('unit', 'unitController@store');
+Route::post('unittambah', 'unitController@tambah');
+Route::get('unit/{id_unit}/delete','unitController@destroy');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
