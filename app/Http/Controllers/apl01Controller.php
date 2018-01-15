@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Apl01;
 use App\Unit;
+use Session;
 
 class apl01Controller extends Controller
 {
@@ -16,7 +17,9 @@ class apl01Controller extends Controller
     public function store(Request $request){
     	$input = $request->all();
     	Apl01::create($input);
-		return redirect('apl01');
+    	// $data = Apl01::all();
+    	// Session::put('nama',$data['nama']);
+		return redirect('apl02');
 		// Apl01::create([
   //               'nama' => $request->nama,
   //               'tempat_lahir' => $request->tempat_lahir,

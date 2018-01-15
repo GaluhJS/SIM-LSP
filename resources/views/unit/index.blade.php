@@ -150,7 +150,7 @@
                     <div id="myModalEdit{{ $data['id_unit'] }}"" class="modal fade" role="dialog">
                       <div class="modal-dialog">
                         <!-- Modal content-->
-                        <form method="get" action="{{url('unit/'.$data['id'].'/update' )}}">
+                        <form method="get" action="{{url('unit/'.$data['id_unit'].'/update' )}}">
                         <div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -183,7 +183,7 @@
                     </div>
                     <!-- tutup modal -->
               <button type="button" href="{{url('unit/edit/'.$data->id_unit)}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#myModalEdit{{ $data['id_unit'] }}"><i class="fa fa-pencil"></i></button>
-              <a type="button" href="{{ url('unit/'. $data['id_unit'] .'/delete') }}" class="btn btn-danger btn-xs" onclick="return confirm('Apakah anda yakin ingin menghapus Kostumer ini?')"><i class="fa fa-trash"></i></a>
+              <a type="button" href="{{ url('unit/'. $data['id_unit'] .'/delete') }}" class="btn btn-danger btn-xs" onclick="return confirm('Apakah anda yakin ingin menghapus Unit ini?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
           @endforeach
