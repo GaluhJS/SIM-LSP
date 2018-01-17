@@ -34,7 +34,7 @@
                     <div class="box-body">
                       <div class="form-group">
                         <label>Nama Peserta</label>
-                        <input type="text" class="form-control" name="nama" readonly="" value="">
+                        <input type="text" class="form-control" name="nama" readonly="" value="{{$apl1->nama}}">
                       </div>
                       <div class="form-group"> 
                         <label>Nama Asesor 1</label>

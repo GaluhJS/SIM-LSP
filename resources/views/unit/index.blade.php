@@ -1,8 +1,8 @@
 @extends('layouts.dashboard.index')
 
-@section ('title')
+@section('title')
   Unit
-@stop
+@endsection
 
 @section('content-header')
     <h1>
@@ -14,63 +14,9 @@
         <li><count href="#"><i class="fa fa-dashboard"></i> index</count></li>
         <li class="active">Unit</li>    
     </ol>
-@stop
+@endsection
 
 @section('content')
-<!-- <div class="row"> -->
-<!-- <div class="col-md-5">
-  <div class="box box-primary">
-        <div class="box-body">
-          <form method="post" action="{{ url('unit') }}">  
-            {{ csrf_field() }}
-          <div class="form-group">
-            <label>Kode Unit</label>
-            <input type="text" class="form-control" name="id_unit">
-          </div>
-          <div class="form-group">
-            <label>Judul Unit</label>
-            <input type="text" class="form-control" name="judul_unit">
-          </div>
-          <div class="form-group">
-            <label>Jenis statndar</label>
-            <input type="text" class="form-control" name="jenis_standar">
-          </div>
-          <div class="form-group">   
-            <input type="submit" class="btn btn-primary pull-right" value="Tambah" name="tambah">
-          </div>
-          </form>   
-        </div>    
-    </div>   
-</div> -->
-
-
-<!-- <div class="col-md-10">
-  <div class="box box-danger">
-        <div class="box-body">
-        <table class="table table-hover">
-          <thead>
-            <td>Kode Unit</td>
-            <td>Judul Unit</td>
-            <td>Jenis Standar</td>
-            <td class="col-md-2">Aksi</td>
-            </thead>
-          @foreach($datas as $data)
-          <tr>
-            <td>{{$data['id_unit']}}</td>
-            <td>{{$data['judul_unit']}}</td>
-            <td>{{$data['jenis_standar']}}</td>
-            <td>
-              <button type="button" href="{{url('unit/edit/'.$data->id_unit)}}" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></button>
-              <a type="button" href="{{ url('unit/'. $data['id_unit'] .'/delete') }}" class="btn btn-danger btn-xs" onclick="return confirm('Apakah anda yakin ingin menghapus Kostumer ini?')"><i class="fa fa-trash"></i></a>
-            </td>
-          </tr>
-          @endforeach
-        </table>
-        </div>
-    </div>   
-</div>
-  
-</div> -->
 <div class="box box-primary">
         <div class="box-header with-border">
               <div class="col-sm-4 clearfix pull-right">
@@ -106,7 +52,7 @@
                               {{ csrf_field() }}
                             <div class="form-group">
                               <label>Kode Unit</label>
-                              <input type="text" class="form-control" name="id_unit">
+                              <input type="text" class="form-control" name="kd_unit">
                             </div>
                             <div class="form-group">
                               <label>Judul Unit</label>
@@ -131,7 +77,7 @@
 
         <div class="box-body">
         <div class="table-responsive">     
-          <table class="table table-striped">
+          <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
                 <td>Kode Unit</td>
@@ -142,15 +88,15 @@
             </thead>
           @foreach($datas as $data)
           <tr>
-            <td>{{$data['id_unit']}}</td>
+            <td>{{$data['kd_unit']}}</td>
             <td>{{$data['judul_unit']}}</td>
             <td>{{$data['jenis_standar']}}</td>
             <td>
               <!-- Modal edit -->
-                    <div id="myModalEdit{{ $data['id_unit'] }}"" class="modal fade" role="dialog">
+                    <div id="myModalEdit{{ $data['id'] }}"" class="modal fade" role="dialog">
                       <div class="modal-dialog">
                         <!-- Modal content-->
-                        <form method="get" action="{{url('unit/'.$data['id_unit'].'/update' )}}">
+                        <form method="get" action="{{url('unit/'.$data['id'].'/update' )}}">
                         <div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -161,7 +107,7 @@
                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                               <div class="form-group">
                               <label>Kode Unit</label>
-                              <input type="text" class="form-control" name="id_unit" value="{{$data['id_unit']}}">
+                              <input type="text" class="form-control" name="kd_unit" value="{{$data['kd_unit']}}">
                             </div>
                             <div class="form-group">
                               <label>Judul Unit</label>
@@ -182,8 +128,8 @@
                       </div>
                     </div>
                     <!-- tutup modal -->
-              <button type="button" href="{{url('unit/edit/'.$data->id_unit)}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#myModalEdit{{ $data['id_unit'] }}"><i class="fa fa-pencil"></i></button>
-              <a type="button" href="{{ url('unit/'. $data['id_unit'] .'/delete') }}" class="btn btn-danger btn-xs" onclick="return confirm('Apakah anda yakin ingin menghapus Unit ini?')"><i class="fa fa-trash"></i></a>
+              <button type="button" href="{{url('unit/edit/'.$data->id)}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#myModalEdit{{ $data['id'] }}"><i class="fa fa-pencil"></i></button>
+              <a type="button" href="{{ url('unit/'. $data['id'] .'/delete') }}" class="btn btn-danger btn-xs" onclick="return confirm('Apakah anda yakin ingin menghapus Unit ini?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
           @endforeach
@@ -191,5 +137,6 @@
         </table>
       </div>
         </div>
-    </div>   
-@stop 
+    </div>  
+    
+@endsection 

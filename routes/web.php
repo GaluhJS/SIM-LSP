@@ -18,12 +18,15 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('apl01', 'apl01Controller@index');
+Route::get('datapeserta', 'apl01Controller@index2');
 Route::post('apl01', 'apl01Controller@store');
-Route::get('apl02', 'apl02Controller@index');
+Route::get('apl02/{id}', 'apl02Controller@index');
+Route::get('pengecekan', 'pengecekanController@index');
+
 Route::get('unit', 'unitController@index');
 Route::post('unit', 'unitController@store');
-Route::get('unit/{id_unit}/update', 'unitController@update');
-Route::get('unit/{id_unit}/delete','unitController@destroy');
+Route::get('unit/{id}/update', 'unitController@update');
+Route::get('unit/{id}/delete','unitController@destroy');
 
 Auth::routes();
 

@@ -19,9 +19,9 @@
         <li class="header">HEADER</li>
 
         <li>
-          <a href="{{url('apl01')}}">
+          <a href="{{url('datapeserta')}}">
             <i class="fa fa-bar-chart"></i>
-            <span>APL-01</span>
+            <span>Data Peserta</span>
           </a>
         </li>
         <li>

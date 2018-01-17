@@ -15,6 +15,13 @@
   <link rel="stylesheet" href="{{ asset('plugins/datepicker/datepicker3.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/colorpicker/bootstrap-colorpicker.min.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/timepicker/bootstrap-timepicker.min.css') }}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
 
 
 </head>
@@ -55,5 +62,33 @@
   <script src="{{ asset('plugins/datepicker/bootstrap-datepicker.js') }}"></script>
   <script src="{{ asset('plugins/colorpicker/bootstrap-colorpicker.min.js') }}"></script>
   <script src="{{ asset('plugins/timepicker/bootstrap-timepicker.min.js') }}"></script>
+    <!-- jQuery 2.2.3 -->
+  <script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
+  <!-- Bootstrap 3.3.6 -->
+  <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+  <!-- DataTables -->
+  <script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
+  <!-- SlimScroll -->
+  <script src="{{asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
+  <!-- FastClick -->
+  <script src="{{asset('plugins/fastclick/fastclick.js')}}"></script>
+  <!-- AdminLTE App -->
+  <script src="{{asset('dist/js/app.min.js')}}"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="{{asset('dist/js/demo.js')}}"></script>
+  <script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script> 
 </body>
 </html>

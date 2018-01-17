@@ -23,9 +23,6 @@
               <label>A. Data Pribadi</label>
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <div class="form-group">
-                <input type="text" class="form-control" name="id_apl01" placeholder="Kode">
-              </div>
-              <div class="form-group">
                 <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
               </div>
               <div class="form-group">

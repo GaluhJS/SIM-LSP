@@ -16,7 +16,7 @@ class unitController extends Controller
     public function store(Request $request){
         $tampil = $request->all();
         $validator = Validator::make($tampil, [
-            'id_unit'      => 'required',
+            'kd_unit'   => 'required',
             'judul_unit'   => 'required',
             'jenis_standar'=> 'required'
         ]);
@@ -41,7 +41,7 @@ class unitController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'id_unit'      => 'required',
+            'kd_unit'   => 'required',
             'judul_unit'   => 'required',
             'jenis_standar'=> 'required'
         ]);

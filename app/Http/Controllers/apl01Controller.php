@@ -10,16 +10,21 @@ class apl01Controller extends Controller
 {
     //
     public function index(Request $request){
-    	$units = Unit::All();
-    	return view('apl01.index', compact('units'));
+      return view('apl01.index');
+    }
+    public function index2(Request $request){
+    	$datas = Apl01::All();
+    	return view('apl01.data', compact('datas'));
     }
 
     public function store(Request $request){
     	$input = $request->all();
-    	Apl01::create($input);
+    	$kode = Apl01::create($input);
+
+
     	// $data = Apl01::all();
     	// Session::put('nama',$data['nama']);
-		return redirect('apl02');
+		return redirect('apl02/'.$kode->id);
 		// Apl01::create([
   //               'nama' => $request->nama,
   //               'tempat_lahir' => $request->tempat_lahir,
